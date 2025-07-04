@@ -35,6 +35,74 @@ Este proyecto permite:
 - Autenticación de usuarios
 - Diseño responsive
 - Interfaz moderna y amigable
+- Sistema de roles y permisos
+- Protección contra accesos no autorizados
+- Validación de datos en cliente y servidor
+
+## Sistema de Seguridad y Roles
+
+### Roles del Sistema
+El sistema implementa un sistema de roles para controlar el acceso a diferentes funcionalidades:
+
+1. **Usuario Regular (role: 'user')**
+   - Puede ver el catálogo de platos
+   - Puede dejar reseñas
+   - No puede acceder al panel de administración
+   - Es el rol por defecto al crear una nueva cuenta
+
+2. **Administrador (role: 'admin')**
+   - Tiene todos los permisos de usuario regular
+   - Puede acceder al panel de administración
+   - Puede gestionar platos (CRUD)
+   - Puede gestionar usuarios (CRUD)
+   - Puede crear nuevos usuarios admin
+   - Puede eliminar platos y usuarios lógicamente
+
+### Protección de Rutas
+
+#### Rutas Públicas
+- `/api/dishes` - Obtener todos los platos
+- `/api/dishes/category/:category` - Obtener platos por categoría
+- `/api/dishes/:id` - Obtener plato por ID
+- `/api/reviews` - Obtener reseñas
+- `/api/reviews/:id` - Obtener reseña por ID
+
+#### Rutas Protegidas (Admin)
+- `/api/dishes` - POST/PUT/DELETE - Gestión de platos
+- `/api/users` - GET/POST/PUT/DELETE - Gestión de usuarios
+- `/api/auth/login` - Autenticación
+
+### Medidas de Seguridad Implementadas
+
+1. **Autenticación**
+   - JWT (JSON Web Tokens) para autenticación
+   - Tokens con expiración (24h)
+   - Verificación de tokens en todas las rutas protegidas
+   - Mensajes de error genéricos para evitar información sensible
+
+2. **Contraseñas**
+   - Hasheadas con bcrypt
+   - Salting único por usuario
+   - Validación de fuerza de contraseña
+   - No se almacenan en texto plano
+
+3. **Validación de Datos**
+   - En cliente (frontend)
+   - En servidor (backend)
+   - Esquemas de validación en MongoDB
+   - Manejo de errores centralizado
+
+4. **Protección contra Accesos No Autorizados**
+   - Middleware de autenticación
+   - Verificación de roles
+   - Eliminación lógica de datos
+   - Protección contra inyección SQL
+
+5. **Manejo de Errores**
+   - Centralizado en el backend
+   - Mensajes genéricos para usuarios
+   - Logging para desarrolladores
+   - Manejo de errores HTTP estándar
 
 ## Tecnologías empleadas
 
