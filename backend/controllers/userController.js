@@ -14,6 +14,15 @@ exports.createUser = async (req, res) => {
     }
 
     const user = new User({ username, password, role });
+    
+    // Si se intenta crear un usuario admin, verificar que el creador sea admin
+    if (role === 'admin') {
+      if (!req.user || req.user.role !== 'admin') {
+        return res.status(403).json({ 
+          message: 'Solo los usuarios admin pueden crear otros usuarios admin' 
+        });
+      }
+    }
     await user.save();
 
     // Avoid sending password back
