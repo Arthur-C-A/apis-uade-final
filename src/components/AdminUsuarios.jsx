@@ -26,7 +26,7 @@ const AdminUsuarios = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showModal, setShowModal] = useState(false);
-    const [currentUser, setCurrentUser] = useState({ username: '', password: '', role: 'user' });
+    const [currentUser, setCurrentUser] = useState({ username: '', password: '', role: 'admin' });
     const [isEditing, setIsEditing] = useState(false);
     const navigate = useNavigate();
 
@@ -59,7 +59,7 @@ const AdminUsuarios = () => {
 
     const handleCreateUser = () => {
         setIsEditing(false);
-        setCurrentUser({ username: '', password: '', role: 'user' });
+        setCurrentUser({ username: '', password: '', role: 'admin' });
         setShowModal(true);
     };
 
