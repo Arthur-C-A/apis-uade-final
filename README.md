@@ -1,8 +1,7 @@
-# Il Vero Ristorante
+# Aplicaciones Interactivas | UADE 
 
-Aplicación web fullstack para un restaurante italiano que permite ver el menú, gestionar platos desde un panel de administración, y permitir a los usuarios dejar reseñas.
 
-## Tabla de Contenidos
+## Indice 
 
 - [Descripción](#descripción)
 - [Características](#características)
