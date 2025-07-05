@@ -535,7 +535,7 @@ exports.deleteDish = async (req, res) => {
 
 **Desarrollado con ❤️ para Il Vero Ristorante**
 
-Arthur Callomamani acalllomamani@uade.edu.ar
+- Arthur Callomamani acalllomamani@uade.edu.ar
 - Emir Gerbasi egerbasi@uade.edu.ar
 - Tomas Bermejo tbermejo@uade.edu.ar
 
