@@ -60,14 +60,11 @@ El sistema implementa un sistema de roles para controlar el acceso a diferentes 
 
 #### Rutas Públicas
 - `/api/dishes` - Obtener todos los platos
-- `/api/dishes/category/:category` - Obtener platos por categoría
-- `/api/dishes/:id` - Obtener plato por ID
-- `/api/reviews` - Obtener reseñas
-- `/api/reviews/:id` - Obtener reseña por ID
 
 #### Rutas Protegidas (Admin)
+A probarse con postman
 - `/api/dishes` - POST/PUT/DELETE - Gestión de platos
-- `/api/users` - GET/POST/PUT/DELETE - Gestión de usuarios
+- `/api/users` - GET/POST/PUT/DELETE - Gestión de usuarios (De no estar logeados deberia dar un 'Oops')
 - `/api/auth/login` - Autenticación
 
 ### Medidas de Seguridad Implementadas
