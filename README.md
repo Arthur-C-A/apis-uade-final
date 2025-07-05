@@ -32,24 +32,23 @@ PORT=5000
 
 ## Menu admin
 
-   http://localhost:5173/menuAdmin
+   localhost:5173/menuAdmin
    *Al loguearse correctamente, será dirigido automáticamente
    
-   Modulo Platos
-   Modulo Usuarios
+   Se podrá acceder a los módulos Platos y Usuario
 
-## Modulo Platos
+## Módulo Platos
 
 - Se podrá crear, editar y borrar platos
 - Opcion para deslogearse
    
-## Modulo Usuario
+## Módulo Usuario
 
 - Se podrá crear, editar y borrar usuarios
 - Opcion para deslogearse
 
 
-### Desarrollo de Documentación extendida:
+# Desarrollo de Documentación extendida:
 
 ## Indice 
 
