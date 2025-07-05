@@ -13,16 +13,19 @@ exports.createUser = async (req, res) => {
       return res.status(400).json({ message: 'El nombre de usuario ya existe.' });
     }
 
-    const user = new User({ username, password, role });
+    // Si no se especifica un rol, por defecto es 'admin'
+    const userRole = role || 'admin';
     
     // Si se intenta crear un usuario admin, verificar que el creador sea admin
-    if (role === 'admin') {
+    if (userRole === 'admin') {
       if (!req.user || req.user.role !== 'admin') {
         return res.status(403).json({ 
           message: 'Solo los usuarios admin pueden crear otros usuarios admin' 
         });
       }
     }
+
+    const user = new User({ username, password, role: userRole });
     await user.save();
 
     // Avoid sending password back
