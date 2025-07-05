@@ -98,6 +98,9 @@ El sistema implementa un sistema de roles para controlar el acceso a diferentes 
    - Protección contra inyección SQL
 
 5. **Manejo de Errores**
+   
+   (Empleando la libreria Axios)
+
    - Centralizado en el backend
    - Mensajes genéricos para usuarios
    - Logging para desarrolladores
