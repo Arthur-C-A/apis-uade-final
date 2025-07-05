@@ -10,7 +10,6 @@
 - [Instalación y ejecución](#instalación-y-ejecución)
 - [Variables de entorno](#variables-de-entorno)
 - [Comandos útiles](#comandos-útiles)
-- [Ejemplo de uso de la API](#ejemplo-de-uso-de-la-api)
 - [Acceso al Panel de Administración](#acceso-al-panel-de-administración)
 - [Notas y buenas prácticas](#notas-y-buenas-prácticas)
 - [Contribuir](#contribuir)
@@ -179,7 +178,7 @@ npm install
 
 ### 4. Configura las variables de entorno
 
-En la carpeta `backend/`, crea un archivo `.env` con:
+En la carpeta `backend/` deberia existir un .env, en caso de no existir crea un archivo `.env` con:
 
 ```
 MONGO_URI=mongodb://localhost:27017/il_vero_ristorante
@@ -201,23 +200,6 @@ En otra terminal, desde la raíz del proyecto:
 npm run dev
 ```
 
-### 7. Crear usuario administrador
-
-```bash
-cd backend
-npm run create-admin
-```
-
-## Variables de entorno
-
-En la carpeta `backend/`, crea un archivo `.env` con:
-
-```
-MONGO_URI=mongodb://localhost:27017/il_vero_ristorante
-JWT_SECRET=tu_clave_secreta_muy_segura
-PORT=5000
-```
-
 ## Comandos útiles
 
 - **Frontend:**  
@@ -227,48 +209,6 @@ PORT=5000
   `npm run dev` — Inicia el backend con nodemon (recarga automática).
   `node src/server.js` — Inicia el backend en modo producción.
   `npm run create-admin` — Crea un usuario administrador.
-
-## Ejemplo de uso de la API
-
-### **Autenticación**
-
-- **POST** `/api/auth/login`
-  - **Body:**  
-    ```json
-    {
-      "email": "admin@ristorante.com",
-      "password": "admin123"
-    }
-    ```
-  - **Respuesta:**  
-    ```json
-    {
-      "token": "jwt_token_aqui",
-      "user": { "id": "...", "nombre": "Admin", "role": "admin" }
-    }
-    ```
-
-### **Platos**
-
-- **GET** `/api/dishes`
-  - Devuelve la lista de todos los platos.
-
-- **POST** `/api/dishes` (requiere token de admin)
-  - Crea un nuevo plato.
-
-- **PUT** `/api/dishes/:id` (requiere token de admin)
-  - Actualiza un plato existente.
-
-- **DELETE** `/api/dishes/:id` (requiere token de admin)
-  - Elimina un plato.
-
-### **Reseñas**
-
-- **POST** `/api/reviews`
-  - Crea una reseña para un plato.
-
-- **GET** `/api/reviews`
-  - Obtiene todas las reseñas.
 
 ## Pruebas de la API con REST Client
 
@@ -450,6 +390,8 @@ const dishSchema = new mongoose.Schema({
 
 ### 4. Configuración de Axios
 
+   De esta forma consumimos la api
+
 #### Configuración Global
 ```javascript
 // frontend/src/config/axios.js
@@ -545,52 +487,6 @@ exports.deleteDish = async (req, res) => {
 };
 ```
 
-### 7. Manejo de Errores
-
-#### Tipos de Errores
-- Errores de autenticación (401)
-- Errores de autorización (403)
-- Errores de validación (400)
-- Errores del servidor (500)
-
-#### Manejo Centralizado
-```javascript
-// backend/src/app.js
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(err.status || 500).json({ 
-    status: 'error',
-    message: err.message || 'Something went wrong!' 
-  });
-});
-```
-
-### 8. Seguridad Adicional
-
-#### Protección contra CSRF
-- Tokens CSRF en formularios
-- Verificación de referer
-- Protección contra XSS
-
-#### Validación de Datos
-- Esquemas de validación en MongoDB
-- Sanitización de inputs
-- Validación de roles
-- Protección contra inyección
-
-#### Rate Limiting
-```javascript
-// backend/src/app.js
-const rateLimit = require('express-rate-limit');
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-});
-
-app.use('/api/auth', limiter);
-```
-
----
-
 **Desarrollado con ❤️ para Il Vero Ristorante**
+Contacto: acalllomamani@uade.edu.ar
+
