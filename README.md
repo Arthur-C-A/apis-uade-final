@@ -1,5 +1,26 @@
 # Aplicaciones Interactivas | UADE 
 
+## Menu Login
+
+   localhost:5173/login
+
+   usuario: admin
+   contrasena: admin123
+
+## Menu admin
+
+   Modulo Platos
+   Modulo Usuarios
+
+## Menu Platos
+
+- Se podran crear, editar, borrar Platos
+- Opcion para deslogearse
+   
+## Menu Usuario
+
+- Se podran crear, editar, borrar Usuarios
+- Opcion para deslogearse
 
 ## Indice 
 
