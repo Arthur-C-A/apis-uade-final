@@ -33,9 +33,10 @@ PORT=5000
 ## Menu admin
 
    localhost:5173/menuAdmin
+   
    *Al loguearse correctamente, será dirigido automáticamente
    
-   Se podrá acceder a los módulos Platos y Usuario
+   - Se podrá acceder a los módulos Platos y Usuario
 
 ## Módulo Platos
 
