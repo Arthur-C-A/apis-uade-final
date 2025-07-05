@@ -58,7 +58,6 @@ PORT=5000
 - [Tecnologías empleadas](#tecnologías-empleadas)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Instalación y ejecución](#instalación-y-ejecución)
-- [Variables de entorno](#variables-de-entorno)
 - [Comandos útiles](#comandos-útiles)
 - [Acceso al Panel de Administración](#acceso-al-panel-de-administración)
 - [Notas y buenas prácticas](#notas-y-buenas-prácticas)
