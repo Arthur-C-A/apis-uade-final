@@ -1,4 +1,27 @@
-# Aplicaciones Interactivas | UADE 
+# Aplicaciones Interactivas | Grupo 7 | UADE 
+
+## Aclaración previa a la inicialización:
+
+* En la carpeta `backend/` deberia encontrarse el archivo ".env". Caso contrario, se deberá crearlo con los siguientes datos:
+  
+```
+MONGO_URI=mongodb://localhost:27017/il_vero_ristorante
+JWT_SECRET=tu_clave_secreta_muy_segura
+PORT=5000
+```
+
+## Guía rápida de Uso:
+
+1. Descargar el proyecto como .zip, descomprimirlo y abrir la carpeta con el IDE de preferencia. Dentro del proyecto, se recomienda abrir la terminal (ctrl + J o command + J) y dividirla en 2.
+   
+2. En la terminal 1:
+   - npm i (instalación de dependencias)
+3. En la terminal 2:
+   - cd backend (dirigirse a la carpeta de backend)
+   - npm i (instalación de dependencias)
+   - npm run dev (para inicializar el backend)
+4. En la terminal 1: npm run dev (para inicializar el frontend)
+5. Abrir el navegador en la ruta creada al inicializar el frontend (ej: http://localhost:5173/)
 
 ## Menu Login
 
@@ -9,18 +32,24 @@
 
 ## Menu admin
 
+   http://localhost:5173/menuAdmin
+   *Al loguearse correctamente, será dirigido automáticamente
+   
    Modulo Platos
    Modulo Usuarios
 
-## Menu Platos
+## Modulo Platos
 
-- Se podran crear, editar, borrar Platos
+- Se podrá crear, editar y borrar platos
 - Opcion para deslogearse
    
-## Menu Usuario
+## Modulo Usuario
 
-- Se podran crear, editar, borrar Usuarios
+- Se podrá crear, editar y borrar usuarios
 - Opcion para deslogearse
+
+
+### Desarrollo de Documentación extendida:
 
 ## Indice 
 
@@ -506,5 +535,8 @@ exports.deleteDish = async (req, res) => {
 ```
 
 **Desarrollado con ❤️ para Il Vero Ristorante**
-Contacto: acalllomamani@uade.edu.ar
+
+Arthur Callomamani - acalllomamani@uade.edu.ar
+Emir Gerbasi - egerbasi@uade.edu.ar
+Tomas Bermejo - tbermejo@uade.edu.ar
 
